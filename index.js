@@ -1,12 +1,11 @@
 const express = require("express");
-const admin = require("firebase-admin");
-const bodyParser = require("body-parser");
-const app = express();
+//const admin = require("firebase-admin");
+const bodyParser = require("body-parser");const app = express();
 app.use(bodyParser.json());
 
-const serviceAccount = require("./serviceAccountKey.json");
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
+//const serviceAccount = require("./serviceAccountKey.json");
+//admin.initializeApp({
+// credential: admin.credential.cert(serviceAccount)
 });
 
 app.post("/webhook", (req, res) => {
