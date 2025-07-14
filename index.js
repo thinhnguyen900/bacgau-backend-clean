@@ -1,3 +1,5 @@
+
+console.log("Phiên bản bác Gấu đang chạy: 2025-07-14-18h");
 app.post("/webhook", (req, res) => {
   const voiceText = (req.body.text || "Không có nội dung").toLowerCase();
   console.log("Voice content:", voiceText);
