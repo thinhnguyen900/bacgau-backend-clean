@@ -27,11 +27,10 @@ app.get("/", (req, res) => {
   res.send("Bác Gấu backend đang chạy...");
 });
 
-// Kiểm tra backend hoạt động
+// Kiểm tra hoạt động
 app.get("/ping", (req, res) => {
   res.send("Pong from Bác Gấu!");
 });
 
-// Khởi động server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("Server listening on port", PORT));
