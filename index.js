@@ -1,3 +1,4 @@
+// Update logic phản hồi bác Gấu 17h49
 app.post("/webhook", (req, res) => {
   const voiceText = (req.body.text || "Không có nội dung").toLowerCase();
   console.log("Voice content:", voiceText);
