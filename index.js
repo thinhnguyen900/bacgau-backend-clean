@@ -8,10 +8,22 @@ app.use(bodyParser.json());
 // credential: admin.credential.cert(serviceAccount)
 });
 
-app.post("/webhook", (req, res) => {
-  const voiceText = req.body.text || "Không có nội dung";
-  console.log("Voice content:", voiceText);
-  res.send("Đã nhận voice");
+const voiceText = req.body.text || "Không có nội dung";
+console.log("Voice content:", voiceText);
+
+let reply = "Bác chưa hiểu rõ lắm, con nói lại được không?";
+
+// Phản hồi linh hoạt dựa theo nội dung
+if (voiceText.includes("chào")) {
+  reply = "Bác Gấu chào Muối nhé!";
+} else if (voiceText.includes("yêu")) {
+  reply = "Bác Gấu cũng yêu Muối nhiều lắm!";
+} else if (voiceText.includes("mệt")) {
+  reply = "Muối nghỉ ngơi một chút nha, bác ở đây nè.";
+}
+
+res.send(reply);
+
 });
 
 app.get("/", (req, res) => res.send("Bác Gấu backend đang chạy..."));
