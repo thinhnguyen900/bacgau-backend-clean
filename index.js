@@ -8,7 +8,8 @@ app.use(bodyParser.json());
 // credential: admin.credential.cert(serviceAccount)
 });
 
-const voiceText = req.body.text || "Không có nội dung";
+const voiceText = (req.body.text || "Không có nội dung").toLowerCase();
+
 console.log("Voice content:", voiceText);
 
 let reply = "Bác chưa hiểu rõ lắm, con nói lại được không?";
